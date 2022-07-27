@@ -1,18 +1,18 @@
+path_classifiers:
+  docs:
+    - README.md
 queries:
   - exclude: cpp/use-of-goto            
 extraction:
   cpp:
     prepare:    # Customizable step used by all languages.
       packages:
-        - gcc
+        - g++-6
     after_prepare:    # Customizable step used by all languages.
-      
+      - export GNU_MAKE=make
+      - export GIT=true
+      - echo after_prepare to go
 
-    configure:    # Customizable step used only by C/C++ extraction.
-      command:
-       
-    before_index:    # Customizable step used by all languages.
-    
     index:    # Customizable step used by all languages.
       build_command:
-        - gcc main.c 
+        - $GNU_MAKE
