@@ -1,0 +1,10 @@
+path_classifiers:
+  docs:
+    - README.md
+queries:
+  - exclude: cpp/use-of-goto            
+extraction:
+  cpp:
+    index:    # Customizable step used by all languages.
+      build_command:
+        - make
