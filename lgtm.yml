@@ -5,14 +5,6 @@ queries:
   - exclude: cpp/use-of-goto            
 extraction:
   cpp:
-    prepare:    # Customizable step used by all languages.
-      packages:
-        - g++-6
-    after_prepare:    # Customizable step used by all languages.
-      - export GNU_MAKE=make
-      - export GIT=true
-      - echo after_prepare to go
-
     index:    # Customizable step used by all languages.
       build_command:
-        - $GNU_MAKE
+        - make
